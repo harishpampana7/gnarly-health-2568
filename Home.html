@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin-top: 50px;
+        }
+        #fixnavbar{
+            display: flex;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            justify-content: space-around;
+            position:fixed;
+            top: 0;
+            z-index: 50;
+        }
+        .fix1{
+            display: flex;
+            color: white;
+            justify-content: space-between;
+        }
+
+        #head{
+            margin-top: 60px;
+        }
+        #head>img{
+            width: 25%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+        img+p{
+            text-align: center;
+        }
+        .square{
+            list-style-type: square;
+            font:bold;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #navbar{
+            display:flex;
+            width:75%;
+            margin:auto;
+            justify-content: space-around;
+            border-bottom: 1px solid gray;
+            border-top: 4px solid black;
+            padding: 5px;
+            font: bold;
+        }
+        #navbar>div:hover{
+            background-color: #F8F8F8;
+            color: blue;
+            border-bottom: 2px solid red;
+        }
+        #navbar>span:hover{
+            background-color: #F8F8F8;
+            color: blue;
+            border-bottom: 2px solid red;
+        }
+        
+        #newsbody{
+            display:flex;
+            width:75%;
+            margin:auto;
+            justify-content: center;
+            /* border: 3px solid rgb(13, 255, 0); */
+            border-radius: 5px;
+            gap: 20px;
+            /* margin: 10px; */
+        }
+        #topstories{
+            /* border: 1px solid red; */
+            border-radius: 5px;
+            width: 35%;
+        }
+        #topstories>div>img{
+            width: 100%;
+        }
+        #topstories>div{
+            /* border: 1px solid blue; */
+            margin-top:20px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            padding: 10px;
+        }
+
+        #middle{
+            /* border: 1px solid red; */
+            width: 30%;
+            /* gap: 5px; */
+
+        }
+        #middle>div{
+            display: flex;
+            gap: 10px;
+            width: auto;
+            height: 80px;
+            /* border-bottom: 2px solid rgb(175, 166, 166); */
+            /* border: 1px solid red; */
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            
+        }
+        #middle>div>img{
+            width: 50%;
+            height: 70px;
+            
+        }
+        #middle>div>p{
+            width: auto;
+            height: 70%;
+            margin-top:1px;
+            text-align: left;
+
+        }
+        #top{
+            padding-top: 63px;
+        }
+
+        #mostpopular{
+            /* border: 1px solid red; */
+            width: 35%;
+            gap:10px;
+            background-color: #F8F8F8;
+            margin-top: 15px;
+        }
+        #mostpopular>div{
+            display:flex;
+            /* border: 3px solid rgb(13, 255, 0); */
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+            width: auto;
+            height: 90px;
+            padding-left: 20px;
+            border-bottom: 2px solid gray;
+            margin-bottom: 5px;
+            justify-content: space-between;
+
+        }
+        #mostpopular>div>img{
+            width:auto;
+            margin-right:15px;
+        }
+
+        .col{
+            /* border: 1px solid red; */
+            width: 35%;
+            height: 800px;
+            gap:10px;
+            background-color: white;
+            border-bottom: 2px solid white;
+        }
+        .col>img{
+            border-radius: 50%;
+            width:30%;
+            height: 90px;
+            margin-top: 20px;
+        }
+        .col>div{
+            height: auto;
+        }
+        #cartoon{
+            display: flex;
+            width:75%;
+            margin-top: 15px;
+            justify-content: center;
+            /* border: 1px solid red; */
+            width: auto;
+            gap: 10px;
+            padding:20px;
+        }
+        #cartoon>div>img{
+            width:auto;
+            height: 200px;
+        }
+        hr{
+            width:75%;
+            margin:auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            /* justify-content: center; */
+        }
+
+        /* gallery */
+        #gallery{
+            display:flex;
+            width:75%;
+            margin:auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            justify-content: center;
+            /* width: 100%; */
+            height: 500px;
+            gap:20px;
+            /* border: 1px solid red; */
+            border-radius:5px;
+            background-color: #E6E6E6;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #gallery>div{
+            border-radius:5px;
+        }
+        #galbox1>img{
+            width: 100%;
+            height: 350px;;
+            border-radius:5px;
+            
+        }
+        #galbox2>div>img{
+            width: 60%;
+            height:80px;
+            margin: auto;
+        }
+        #galbox1{
+            width: 70%;
+            height: auto;
+            /* border: 1px solid blue; */
+            /* background-image: url(https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-jcdppve1p57gslfudkjj2o3sd5-20220502133355.Medi.jpeg); */
+
+        }
+        #galbox2{
+            width: 30%;
+            height: auto;
+            /* border: 1px solid blue; */
+            padding: 10px;
+            
+
+        }
+        #galbox2>div{
+            display:flex;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+            row-gap: 20px;
+            border-radius:5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #fotter{
+            display: grid;
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 250px;
+            margin: 10px;
+            background-color: #F2F2F2;
+            text-align: center;
+            align-items: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #footp{
+            color: rgba(89, 84, 84, 0.725);
+            text-shadow: 0 0 3px #9e8282, 0 0 5px #95959b;
+            width: 78%;
+            margin: auto;
+            
+
+        }
+    
+        
+        
+    </style>
+   
+</head>
+<body>
+    <div id="fixnavbar">
+        <div class="fix1">
+            <!-- <i class="fa-regular fa-bars"></i> -->
+            <span class="fa-solid fa-bars" style="color: white;"></span>
+            <h4> e-Paper |Sunday Chronicle </h4>
+        </div>
+        <div>
+            <p><input type=checkbox >Auto Refresh| Corporate Insolvency Resolution Process</p>
+        </div>
+    </div>
+
+    <div id="head">
+        <img src="https://www.deccanchronicle.com/images/DeccanChronicle_Logo.jpg" alt="">
+        <p>Tuesday, Aug 23, 2022 | Last Update : 03:48 PM IST</p>
+    </div>
+    <div id="navbar">
+        <span class="fa fa-home" style="font-size: 26px;";></span>
+        <div><a href="Nation.html">Nation</a></div>
+        <div ><a href="SOUTH.html">South</a></div>
+        <div><a href="World.html">World</a></div>
+        <div>Entertainment</div>
+        <div>Jobs & Education</div>
+        <div>Sports</div>
+        <div>Technolgy</div>
+        <div>Life Style</div>
+        <div>Gallery</div>
+        <div>More...</div>
+    </div>
+    <div id="newsbody">
+        
+        <div id="topstories">
+            <div>
+                <h2><u>TOP STORIES</u></h2>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8clogihjipbrgohjojhue1piv5-20220823133908.jpeg" alt="">
+                <h2>Police detain Bandi Sanjay in Jangaon district</h2>
+                <p>The BJP leader was participating in a protest programme at Station Ghanpur in Jangaon district</p>
+                <ul class="square">
+                    <li>BJP intensifies campaign against local TRS MLAs on social media</li>
+                    <li>Shows your strength in Hydrabad,Bandi tells KCR</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-bsnudco08r3igtj44duecnr7m4-20180206144913.jpeg" alt="">
+                <h2>BJP suspends MLA Raja Singh for remarks on Prophet Muhammad</h2>
+                <p>Party gives 10 days to Telangana MLA to explain why he should not be expelled</p>
+                <ul class="square">
+                    <li>Raja Singh arrested for threatening to disrupt Faruqui’s comedy show</li>
+                    <li>Owaisi says BJP is trying to incite communal violence in Hyderabad</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8cfjj7a3l5913qr3jehsfd16s1-20220823093424.jpeg" alt="">
+                <h2>Income tax officials raid realty major Phoenix</h2>
+                <p>Special team from Mumbai arrives in Hyderabad to carry out raids</p>
+                <ul class="square">
+                    <li>I-T raids on 2 realtors in Hyderabad, Bengaluru</li>
+                </ul>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="top">
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8clogihjipbrgohjojhue1piv5-20220823135222.jpeg" alt="">
+                <p>BJP MP Sudhanshu Trivedi says CBI probe will reveal truth in liquor scam</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-geogt7s8dfv3atrgbvufsha694-20180915015150.jpeg" alt="">
+                <p>Now, portable tanks for Ganesh idols immersion</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-l6dg9n8eu57h7ovuma9guod0t7-20211007095056.jpeg" alt="">
+                <p>Remission granted in Bilkis Bano Case challenged in Supreme Court</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-5n9onkq6r7hnr2jqvg3bek2u25-20220817113253.jpeg" alt="">
+                <p>Maharashtra political crisis: SC refers petitions to constitution bench</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-s702pclqh4p3l96s4vq358jct0-20220518215054.jpeg" alt="">
+                <p>KCR hits out at 'divisive forces' for polluting minds with caste and religion</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8clogihjipbrgohjojhue1piv5-20220823070536.jpeg" alt="">
+                <p>CM Jagan meets PM Modi over funds for Andhra Pradesh</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-t7clda4mcvmgs4g1vvdt5e2db3-20200827111404.jpeg" alt="">
+                <p>HC fumes at TS for not filing counters to GO 111 petitions</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8clogihjipbrgohjojhue1piv5-20220823075320.jpeg" alt="">
+                <p>Shoe row: Bandi charged with mortgaging Telangana pride at Amit Shah's feet</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-mgo8mi5qbhlashc834gmblogv7-20220822200633.jpeg" alt="">
+                <p>TRS diverting attention from Kavitha's involvement in Delhi liquor scam: Bandi</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-2u8so3m56226q72ole3hda88m0-20171014080808.jpeg" alt="">
+                <p>AIADMK leadership issue: Hearing on EPS' appeals adjourned to Aug 25</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-9vku52aim4mkeofj0kkci2ub92-20220504211542.jpeg" alt="">
+                <p>Massive setback to Congress in Munugode</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-3350pfv6ov7cfcih2srhgnmfr0-20220302134424.jpeg" alt="">
+                <p>Kerala govt to launch mobile app to prevent cyber crimes against children</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-grap054qrl6bbauq8geqdrugo7-20190322092550.jpeg" alt="">
+                <p>Kavita denies her role in liquor scam</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-0k9bpt67qg7uuq8cvcj5krvto0-20220613104642.jpeg" alt="">
+                <p>KCR must come clean on family role in liquor scam: Bandi</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-ngl0em66095g01ot9649vha6g2-20210708235945.jpeg" alt="">
+                <p>Shah’s ‘anti-farmer’ tag for KCR is joke of the century: KTR</p>
+            </div>
+        </div>
+        <div id="mostpopular">
+            <h2 style="margin-left:15px;"><u>MOST POPULAR</u></h2>
+            <div>
+                <p>Men in Telangana, Andhra Pradesh have more sexual partners</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-hv2a0if6dp5ag2lvltcegn3pe0-20220822084958.jpeg" alt="">
+            </div>
+            <div>
+                <p>Monkeys that snatched inspector's cap and magistrate's eyeglasses</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-lc2rkhvf7hc4m197h5bjlun5t6-20220823184011.jpeg" alt="">
+            </div>
+            <div>
+                <p>Covid patients at increased risk of psychiatric conditions after two years: Lancet</p>
+                <img src="https://dc-cdn.s3-ap-southeast-1.amazonaws.com/dc-Cover-dthp0dge55uosa84aak9cqh3h7-20161005091059.jpeg" alt="">
+            </div>
+            <div>
+                <p>Do we need to worry about the new China virus?</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-mltv306fpap0vvppb3pci8n071-20191225111756.jpeg" alt="">
+            </div>
+            <div>
+                <p>Swag and the South</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-i2cvpjuh9hoj5pgej18hltqtm5-20220722163323.jpeg" alt="">
+            </div>
+            <div>
+                <p>Hero of another era: Remembering Prathap Pothen</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-i5utfd2tp6pcphmgtlrbhaf3r0-20220718214605.jpeg" alt="">
+            </div>
+            <div>
+                <p>Citizens’ beloved Charminar turns 444</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-71m8dc10ljbh7a5flae9t9hac3-20201027014635.jpeg" alt="">
+            </div>
+            <div>
+                <p>Governor Tamilisai turns doctor on plane to treat fellow passenger</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-5rnld1e9t4qb3k53ptbm4gqa22-20220724003654.jpeg" alt="">
+            </div>
+            <div>
+                <p>Incessant showers to be the new norm, indicate trends</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-2tbh1gh4heklnk87oeqgmlft65-20220621004704.jpeg" alt="">
+            </div>
+            <div>
+                <p>Rains bring to life Warangal’s famous waterfalls</p>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-uumuois1msq6f5n8ekmk2gqek6-20220711221925.jpeg" alt="">
+            </div>
+
+            <h2><u>COLUMNS</u></h2>
+            <div class="col" style="height: auto;">
+                <h3>Aakar Patel | Why, for the first time in 150 years, India’s Census won’t be on time</h3>
+                <p>Aakar Patel</p>
+                <img src="https://dc-cdn.s3-ap-southeast-1.amazonaws.com/4914fbd3d05a8fb84e5caa1255b4dab095073c70-tc-img-columnists.jpg" alt="">
+            </div>
+            <div class="col" style="height: auto;">
+                <h3>Aakar Patel | Why, for the first time in 150 years, India’s Census won’t be on time</h3>
+                <p>Aakar Patel</p>
+                <img src="https://dc-cdn.s3-ap-southeast-1.amazonaws.com/4914fbd3d05a8fb84e5caa1255b4dab095073c70-tc-img-columnists.jpg" alt="">
+            </div>
+            <div class="col" style="height: auto;">
+                <h3>Aakar Patel | Why, for the first time in 150 years, India’s Census won’t be on time</h3>
+                <p>Aakar Patel</p>
+                <img src="https://dc-cdn.s3-ap-southeast-1.amazonaws.com/4914fbd3d05a8fb84e5caa1255b4dab095073c70-tc-img-columnists.jpg" alt="">
+            </div>
+            
+        </div>
+    </div>
+    <hr> 
+    <div id="cartoon">
+        <div>
+            <h2><u>CARTOON OF THE DAY</u></h2>
+            <hr>
+            <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/3acbf1af26a18666a4e1386a962d6a0311d019b3-tc-img-web.jpg" alt="">
+        </div>
+        <div>
+            <h2><u>COUNTER POINT</u></h2>
+            <hr>
+            <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/3265730e3b5934a1275dcd7367501f066e3949d5-tc-img-web.jpg" alt="">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/87102027eda8cf587cbc59d8823bce6238f13f65-tc-img-web.jpg" alt="">
+        </div>
+    </div>
+    <hr> 
+    <div id="gallery">
+        <div id="galbox1">
+            <h2>GALLERY</h2>
+                 <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-jcdppve1p57gslfudkjj2o3sd5-20220502133355.Medi.jpeg" alt="">
+                 <p style="background-color: #1C17176B;color: white;">In Pictures | India reels under intense heatwave</p>
+            
+        </div>
+        <div id="galbox2">
+            <h2> MORE GALLERY</h2>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-jcdppve1p57gslfudkjj2o3sd5-20220502133355.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-mbrh668e4c5hlkkhd8ul33njk5-20220412003743.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8g2q1og4pt9pmf7nan3h7rjjg1-20211119134558.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-1nskatpnrbcp2vgdumm7bkn1e6-20211105110754.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    <div id="fotter">
+        <div>
+            <input style="border: 1px solid blue;" type="text" placeholder="ENHANCED BY Google">
+            <button style="size: 50px;"><span class="fa-solid fa-magnifying-glass"></span>Search</button>
+        </div>
+        <div id="footp">
+            HOME ASIAN AGE ANDHRABHOOMI FINANCIAL CHRONICLE ABOUT US CONTACT US CLASSIFIEDS BOOK CLASSIFIEDS FEEDBACK CAREERS E-PAPER PRIVACY POLICY
+        </div>
+        <div>Copyright © 2015 - 2022 Deccan Chronicle. <br>
+            Designed, Developed & Maintained By Daksham</div>
+    </div>
+    
+</body>
+</html>
