@@ -19,6 +19,7 @@
             justify-content: space-around;
             position:fixed;
             top: 0;
+            left: 0;
             z-index: 50;
         }
         .fix1{
@@ -134,20 +135,180 @@
             width: 78%;
             margin: auto;
         }
+        
+        
+        #more{
+            width: 100px;
+            border: 0px;
 
+            /* height: auto; */
+        }
+
+        .fix1>img{
+            
+            margin: auto;
+            width: 13%;
+            height: 25px;
+        }
+        .fix1>h4{
+            width: 280px;
+            margin: auto;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+/* side menu bar */
+
+#mainslide{
+            width: 10%;
+            height: 100vh;
+            font-family: sans-serif;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #slidebarmenu{
+            background: #F7F7F7;
+            color: white;
+            /* padding: 15px; */
+            width: 80%;
+            height: 700px;
+            overflow: scroll;
+        }
+
+        #sidebar{
+            position: absolute;
+            height: auto;
+            background: #F7F7F7;
+            left: -280px;
+            transition: .5s all ease-in-out;
+
+        }
+        #sidebar.active{
+            left: 0;
+        }
+
+        #sidebar ul{
+            margin-top: 20px;
+        }
+
+        #sidebar ul li {
+            list-style: none;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            text-transform: uppercase;
+        }
+
+        #sidebar .toggle__btn{
+            position: absolute;
+            top: 10px;
+            left: 380px;
+            right:0px;
+            cursor: pointer;
+        }
+
+        .toggle__btn span{
+            background: #FFF;
+            width: 35px;
+            height: 4px;
+            display: block;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+/* more dropdown */
+
+        .dropbtn {
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            /* z-index: 1; */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #f1f1f1;
+        }
+
+        
     </style>
+   
 </head>
 <body>
     <div id="fixnavbar">
         <div class="fix1">
             <!-- <i class="fa-regular fa-bars"></i> -->
-            <span class="fa-solid fa-bars" style="color: white;"></span>
-            <h4> e-Paper |Sunday Chronicle </h4>
+            <div id="mainslide">
+                <div id="sidebar">
+                    <div class="toggle__btn" onclick="show()">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <ul id="slidebarmenu">
+                      <a style="text-decoration: none;color: black;" href="Nation.html"><li>Nation</li></a>
+                      <a style="text-decoration: none;color: black;" href="SOUTH.html"><li>South</li></a>
+                      <a style="text-decoration: none;color: black;" href="World.html"><li>World</li></a>
+                      <a style="text-decoration: none;color: black;" href="Entertainment.html"><li>Entertainment</li></a>
+                      <li>Jobs & Education</li>
+                      <li>Sports</li>
+                      <li>Technology</li>
+                      <li>Lifestyle</li>
+                      <li>Gallery</li>
+                      <li>Business</li>
+                      <li>Opinion</li>
+                      <li>Sunday Chronicle</li>
+                      <li>Featured</li>
+                      <li>Hyderabad Chronicle</li>
+                      <li>Science</li>
+                      <li>Editors' Picks</li>
+                      <li>Just In</li>
+                      <li>Astroguide</li>
+                    </ul>
+                  </div>
+            </div>
+            <!-- <span class="fa-solid fa-bars" style="color: white;"></span> -->
+            <h4> e-Paper | Sunday Chronicle </h4>
+            <img style="height: 25px; width: 13%;" src="https://thumbs.dreamstime.com/b/mobile-173831891.jpg" alt="">
+            <img src="https://i.pinimg.com/originals/5b/73/45/5b73459960abeab3bd7be40fdc2fd6c3.jpg" alt="">
+            <img src="https://i.pinimg.com/564x/ab/4e/6f/ab4e6fc11570bdc430821d1df2f466d7.jpg" alt="">
+            <img style="height: 22px; width: 11%;" src="https://www.deccanchronicle.com/images/app_store_iconWhite.png" alt="">
         </div>
         <div>
-            <p><input type=checkbox >Auto Refresh| Corporate Insolvency Resolution Process</p>
+            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><input type=checkbox >Auto Refresh| Corporate Insolvency Resolution Process</p>
         </div>
     </div>
+
     <div id="head">
         <img src="https://www.deccanchronicle.com/images/DeccanChronicle_Logo.jpg" alt="">
         <p>Tuesday, Aug 23, 2022 | Last Update : 03:48 PM IST</p>
@@ -163,7 +324,20 @@
         <div>Technolgy</div>
         <div>Life Style</div>
         <div>Gallery</div>
-        <div>More...</div>
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn">More...</button>
+            <div class="dropdown-content" style="left:0;">
+            <a href="#">Business</a>
+            <a href="#">Opinion</a>
+            <a href="#">Sunday Chronical</a>
+            <a href="#">Featured</a>
+            <a href="#">Hydrabad Chronical</a>
+            <a href="#">Science</a>
+            <a href="#">Editor's Picks</a>
+            <a href="#">Just In</a>
+            <a href="#">Astroguide</a>
+            </div>
+          </div>
     </div>
     <div id="main">
         <div id="topstories"></div>

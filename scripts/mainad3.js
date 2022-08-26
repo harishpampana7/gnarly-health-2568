@@ -114,3 +114,8 @@
     mostpopular.append(div1)
     document.getElementById("main").append(mostpopular)
 });
+
+
+function show(){
+  document.getElementById('sidebar').classList.toggle('active');
+}
