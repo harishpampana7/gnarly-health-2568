@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+                body{
+            margin-top: 50px;
+            cursor: pointer;
+        }
+/* --------fixednavbar------ */
+        #fixnavbar{
+            display: flex;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            justify-content: space-around;
+            position:fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+        }
+        .fix1{
+            display: flex;
+            color: white;
+        }
+
+        .fix1>img{
+            margin: auto;
+            width: 15%;
+            height: 28px;
+        }
+        .fix1>h4{
+            width: 300px;
+            margin: auto;
+            padding-left: 0%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+/* ------side menu bar------ */
+
+        #mainslide{
+            width: 20%;
+            height: 100vh;
+            font-family: sans-serif;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #slidebarmenu{
+            background: #F7F7F7;
+            color: white;
+            /* padding: 15px; */
+            width: 80%;
+            height: 700px;
+            overflow: scroll;
+        }
+
+        #sidebar{
+            position: absolute;
+            height: auto;
+            background: #F7F7F7;
+            left: -280px;
+            transition: .5s all ease-in-out;
+
+        }
+        #sidebar.active{
+            left: 0;
+        }
+
+        #sidebar ul{
+            margin-top: 20px;
+        }
+
+        #sidebar ul li {
+            list-style: none;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            text-transform: uppercase;
+        }
+
+        #sidebar .toggle__btn{
+            position: absolute;
+            top: 10px;
+            left: 380px;
+            right:0px;
+            cursor: pointer;
+        }
+
+        .toggle__btn span{
+            background: #FFF;
+            width: 35px;
+            height: 4px;
+            display: block;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+/* -------more dropdown --------*/
+
+        .dropbtn {
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            /* z-index: 1; */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #f1f1f1;
+        }
+
+/* ------head------ */
+
+        #head{
+            margin-top: 60px;
+        }
+        #head>img{
+            width: 25%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+        img+p{
+            text-align: center;
+        }
+        .square{
+            list-style-type: square;
+            font:bold;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+/*-------navbar-------- */
+        #navbar{
+            display:flex;
+            width:75%;
+            margin:auto;
+            justify-content: space-around;
+            border-bottom: 1px solid gray;
+            border-top: 4px solid black;
+            padding: 5px;
+            font: bold;
+        }
+        #navbar>div:hover{
+            background-color: #F8F8F8;
+            color: blue;
+            border-bottom: 2px solid red;
+        }
+        #navbar>span:hover{
+            background-color: #F8F8F8;
+            color: blue;
+            border-bottom: 2px solid red;
+        }
+
+        hr{
+            width:75%;
+            margin:auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            /* justify-content: center; */
+        }
+
+/* -----gallery -------*/
+
+#gallery{
+            display:flex;
+            width:75%;
+            margin:auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 30px;
+
+            justify-content: center;
+            /* width: 100%; */
+            height: 500px;
+            gap:20px;
+            /* border: 1px solid red; */
+            border-radius:5px;
+            background-color: #E6E6E6;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #gallery>div{
+            border-radius:5px;
+        }
+        #galbox1>img{
+            width: 100%;
+            height: 350px;;
+            border-radius:5px;
+            
+        }
+        #galbox2>div>img{
+            width: 60%;
+            height:80px;
+            margin: auto;
+        }
+        #galbox1{
+            width: 70%;
+            height: auto;
+        }
+        #galbox2{
+            width: 30%;
+            height: auto;
+            /* border: 1px solid blue; */
+            padding: 10px;
+        }
+        #galbox2>div{
+            display:flex;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+            row-gap: 20px;
+            border-radius:5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+/* ----entertainment ------*/
+#entertainment{
+            width:70%;
+            margin:auto;
+            padding-left: 70px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* background-color: #E6E6E6; */
+        }
+
+        #Entertainmentdiv1{
+            display: flex;
+            margin-bottom: 0px;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        #Entertainmentdiv1>div{
+            display: flex;
+            gap:20px;
+            /* justify-content: space-around; */
+        }
+        #Entertainmentdiv2{
+            display: flex;
+            gap: 100px;
+            /* margin: 20px;
+            /* margin: 10px; */
+            margin:auto;
+            
+        }
+        #Entertainmentdiv2>div>img{
+            width: 260px;
+            height: 180px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #Entertainmentdiv2>div>h3{
+            color: rgb(3, 3, 105);
+            width: 250px;
+
+        }
+
+        #Entertainmentdiv3{
+            display: flex;
+            gap: 100px;
+            /* margin-left: 20px;
+            /* margin: 10px; */
+            margin:auto;
+        }
+
+        #Entertainmentdiv3>div>img{
+            width: 260px;
+            height: 180px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #Entertainmentdiv3>div>h3{
+            color: rgb(3, 3, 105);
+            width: 250px;
+
+        }
+
+/* ----lifestyle ------*/
+        #lifestyle{
+            width:70%;
+            margin:auto;
+            padding-left: 70px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: #E6E6E6;
+        }
+
+        #lifestylediv1{
+            display: flex;
+            margin-bottom: 0px;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        #lifestylediv1>div{
+            display: flex;
+            gap:20px;
+            /* justify-content: space-around; */
+        }
+        #lifestylediv2{
+            display: flex;
+            gap: 70px;
+            /* margin: 20px;
+            /* margin: 10px; */
+            margin:auto;
+            
+        }
+        #lifestylediv2>div>img{
+            width: 280px;
+            height: 180px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #lifestylediv2>div>h3{
+            color: rgb(3, 3, 105);
+            width: 250px;
+
+        }
+
+        #lifestylediv3{
+            display: flex;
+            gap: 70px;
+            /* margin-left: 20px;
+            /* margin: 10px; */
+            margin:auto;
+        }
+
+        #lifestylediv3>div>img{
+            width: 280px;
+            height: 180px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #lifestylediv3>div>h3{
+            color: rgb(3, 3, 105);
+            width: 250px;
+
+        }
+
+/* ----sports ------*/
+        #sports{
+            width:75%;
+            margin: auto;
+        }
+
+        #sportsdiv1{
+            display: flex;
+            margin-bottom: 0px;
+            justify-content: space-between;
+        }
+        #sportsdiv1>div{
+            display: flex;
+            gap:20px;
+            /* justify-content: space-around; */
+        }
+        #sportsdiv2{
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+            /* margin: 10px; */
+            margin-top: 0px;
+        }
+        #sportsdiv2>div>img{
+            width: 250px;
+            height: 170px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #sportsdiv3{
+            display: flex;
+            gap: 20px;
+            margin: 15px;
+        }
+
+        #sportsdiv3>div>img{
+            width: 70px;
+            height: 50px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #sportsdiv3>div{
+            display: flex;
+            gap:20px;
+            text-align:left;
+        }
+
+        
+
+/* -------footer-------- */
+
+#fotter{
+            display: grid;
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 250px;
+            margin-top: 10px;
+            left: 0;
+            background-color: #F2F2F2;
+            text-align: center;
+            align-items: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #footp{
+            color: rgba(89, 84, 84, 0.725);
+            text-shadow: 0 0 3px #9e8282, 0 0 5px #95959b;
+            width: 78%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="fixnavbar">
+        <div class="fix1">
+            <!-- <i class="fa-regular fa-bars"></i> -->
+            <div id="mainslide">
+                <div id="sidebar">
+                    <div class="toggle__btn" onclick="show()">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <ul id="slidebarmenu">
+                      <a style="text-decoration: none;color: black;" href="Nation.html"><li>Nation</li></a>
+                      <a style="text-decoration: none;color: black;" href="SOUTH.html"><li>South</li></a>
+                      <a style="text-decoration: none;color: black;" href="World.html"><li>World</li></a>
+                      <a style="text-decoration: none;color: black;" href="Entertainment.html"><li>Entertainment</li></a>
+                      <li>Jobs & Education</li>
+                      <li>Sports</li>
+                      <li>Technology</li>
+                      <li>Lifestyle</li>
+                      <li>Gallery</li>
+                      <li>Business</li>
+                      <li>Opinion</li>
+                      <li>Sunday Chronicle</li>
+                      <li>Featured</li>
+                      <li>Hyderabad Chronicle</li>
+                      <li>Science</li>
+                      <li>Editors' Picks</li>
+                      <li>Just In</li>
+                      <li>Astroguide</li>
+                    </ul>
+                  </div>
+            </div>
+            <!-- <span class="fa-solid fa-bars" style="color: white;"></span> -->
+            <h4> e-Paper | Sunday Chronicle </h4>
+            <img style="height: 25px; width: 13%;" src="https://thumbs.dreamstime.com/b/mobile-173831891.jpg" alt="">
+            <img src="https://i.pinimg.com/originals/5b/73/45/5b73459960abeab3bd7be40fdc2fd6c3.jpg" alt="">
+            <img src="https://i.pinimg.com/564x/ab/4e/6f/ab4e6fc11570bdc430821d1df2f466d7.jpg" alt="">
+            <img style="height: 22px; width: 11%;" src="https://www.deccanchronicle.com/images/app_store_iconWhite.png" alt="">
+        </div>
+        <div>
+            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><input type=checkbox >Auto Refresh| Corporate Insolvency Resolution Process</p>
+        </div>
+    </div>
+
+    <div id="head">
+        <img src="https://www.deccanchronicle.com/images/DeccanChronicle_Logo.jpg" alt="">
+        <p>Tuesday, Aug 23, 2022 | Last Update : 03:48 PM IST</p>
+    </div>
+    <div id="navbar">
+        <a href="Home.html"><span class="fa fa-home" style="font-size: 26px;";></span></a>
+        <div ><a style="text-decoration: none;color: black;" href="Nation.html">Nation</a></div>
+        <div ><a style="text-decoration: none;color: black;" href="SOUTH.html">South</a></div>
+        <div><a style="text-decoration: none;color: black;" href="World.html">World</a></div>
+        <div ><a style="text-decoration: none;color: black;" href="Entertainment.html">Entertainment</a></div>
+        <div>Jobs & Education</div>
+        <div>Sports</div>
+        <div>Technolgy</div>
+        <div>Life Style</div>
+        <div ><a style="text-decoration: none;color: black;" href="Gallery.html">Gallery</a></div>
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn">More...</button>
+            <div class="dropdown-content" style="left:0;">
+            <a href="#">Business</a>
+            <a href="#">Opinion</a>
+            <a href="#">Sunday Chronical</a>
+            <a href="#">Featured</a>
+            <a href="#">Hydrabad Chronical</a>
+            <a href="#">Science</a>
+            <a href="#">Editor's Picks</a>
+            <a href="#">Just In</a>
+            <a href="#">Astroguide</a>
+            </div>
+          </div>
+    </div>
+    <div id="gallery">
+        <div id="galbox1">
+            <h2>GALLERY</h2>
+                 <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-56jppbb2ma6gekbm96p73imdm3-20220811234016.jpeg" alt="">
+                 <p style="background-color: #1C17176B;color: white;">Ananya Panday, Vijay Deverakonda spotted at coffee shop</p>
+            
+        </div>
+        <div id="galbox2">
+            <h2> MORE GALLERY</h2>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-jcdppve1p57gslfudkjj2o3sd5-20220502133355.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-mbrh668e4c5hlkkhd8ul33njk5-20220412003743.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8g2q1og4pt9pmf7nan3h7rjjg1-20211119134558.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-1nskatpnrbcp2vgdumm7bkn1e6-20211105110754.Medi.jpeg" alt="">
+                <p>In Pictures | India reels under intense heatwave</p>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    <div id="entertainment">
+        <div id="Entertainmentdiv1">
+            <div><u><h2>SOUTH ENTERTAINMENT</h2></u></div>
+        </div>
+        <div id="Entertainmentdiv2">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-vfnl8di156ijukrq55mmf7eos6-20190906011823.jpeg" alt="">
+                <h3>Karthi is a better actor than me: Suriya</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-gu20l6v2eh2gd4oiq292r26ta4-20190519015918.jpeg" alt="">
+                <h3>My upbringing taught me to stay rooted, says Krithi Shetty</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-nq5l86432mrog69lbqsq5cs0m4-20220806010030.jpeg" alt="">
+                <h3>Govt accepts all FIFA demands, seeks to end CoA mandate in SC application</h3>
+            </div>
+
+        </div>
+        <div id="Entertainmentdiv3">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-cctbvgjrju6gp4co4ar4qo9dt5-20220121014528.jpeg" alt="">
+                <h3>I worked to create my own identity: Dulquer Salmaan</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-bdegg9jkvc0821t6rvgeq3ne41-20220801081759.jpeg" alt="">
+                <h3>I would love to do a biopic: Rakul Preet Singh</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-j4cau6a4l7913g90mlhdu226n4-20201124221410.jpeg" alt="">
+                <h3>This makes the price of tickets out of reach for all family members in case they want to watch the movie together.</h3>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="lifestyle">
+        <div id="lifestylediv1">
+            <div><u><h2>LIFESTYLE</h2></u></div>
+        </div>
+        <div id="lifestylediv2">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-5c1droacmv2cna13ff287lhjo0-20200429082552.jpeg" alt="">
+                <h3>My life in Covid-19 quarantine</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-rcf7i7ej6lusuevh8j9d3rg7f1-20200314144258.jpeg" alt="">
+                <h3>Framing the Mundane</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-lm5svqiloml481tidqq5t09s82-20200209162556.jpeg" alt="">
+                <h3>The best pictures from New York Fashion Week
+                </h3>
+            </div>
+
+        </div>
+        <div id="lifestylediv3">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-i2h2i9buncmtmekijibjlr84d0-20200308125825.jpeg" alt="">
+                <h3>A selection of photographer TK Sandeep's work</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-80hhgc3rhafp4ke60e8pp9v0e6-20191108134146.jpeg" alt="">
+                <h3>Valentino fashionably interprets A Midsummer's Night Dream</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-5p043kci875a3lf3rj2m4v6476-20191001145309.jpeg" alt="">
+                <h3>India gears up for Navratri</h3>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="sports">
+        <div id="sportsdiv1">
+            <div><u><h2>SPORTS</h2></u></div>
+        </div>
+        <div id="sportsdiv2">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-df3qsl31ot320ensv4s97m2m40-20220825191956.jpeg" alt="">
+                <h3>Indian kickboxer dies after blow to the head</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-6srhg9tor9vkst7jamubc8qrg3-20191013162145.jpeg" alt="">
+                <h3>Praggnanandaa beats Carlsen in final round, but loses out on top prize</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-5s0glmo3hnhf27rgnjvsp6ogt0-20171011164310.jpeg" alt="">
+                <h3>Govt accepts all FIFA demands, seeks to end CoA mandate in SC application</h3>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-htiseleape2qjoji946ut67pq4-20220819133328.jpeg" alt="">
+                <h3>Indian women footballers face uncertain future after FIFA ban</h3>
+            </div>
+
+        </div>
+        <div id="sportsdiv3">
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-6srhg9tor9vkst7jamubc8qrg3-20190912102628.jpeg" alt="">
+                <h4>India banned by FIFA for third party influence, cannot host U17 women's World Cup</h4>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-4v92lgbgmqk1fd3maosu015vu7-20220809204556.jpeg" alt="">
+                <h4>Women referees call shots at Commonwealth Games</h4>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8khdikqc9ospnb47mkn0rhed44-20220808171908.jpeg" alt="">
+                <h4>Telangana CM congratulates Sindhu for Commonwealth gold</h4>
+            </div>
+            <div>
+                <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-8khdikqc9ospnb47mkn0rhed44-20220808151007.jpeg" alt="">
+                <h4>PV Sindhu clinches first-ever Commonwealth Games singles gold of her career</h4>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+    <div id="fotter">
+        <div>
+            <input style="border: 1px solid blue;" type="text" placeholder="ENHANCED BY Google">
+            <button style="size: 50px;"><span class="fa-solid fa-magnifying-glass"></span>Search</button>
+        </div>
+        <div id="footp">
+            HOME ASIAN AGE ANDHRABHOOMI FINANCIAL CHRONICLE ABOUT US CONTACT US CLASSIFIEDS BOOK CLASSIFIEDS FEEDBACK CAREERS E-PAPER PRIVACY POLICY
+        </div>
+        <div>Copyright © 2015 - 2022 Deccan Chronicle. <br>
+            Designed, Developed & Maintained By Daksham</div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function show(){
+  document.getElementById('sidebar').classList.toggle('active');
+    }
+</script>
